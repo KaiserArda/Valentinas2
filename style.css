@@ -21,9 +21,14 @@ body {
 
 .panel {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  filter: saturate(30%) brightness(85%);
   transition: filter 0.4s ease;
-  filter: saturate(40%) brightness(85%);
 }
+
 
 /* Renkler */
 .blue { background: #0099ff; }
