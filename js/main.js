@@ -1,16 +1,27 @@
 const options = document.querySelectorAll(".option");
-const body = document.body;
+const backgrounds = document.querySelectorAll(".bg");
 
-options.forEach(option => {
+options.forEach((option, index) => {
+
   option.addEventListener("mouseenter", () => {
-    body.style.background = option.dataset.color;
+    backgrounds.forEach(bg => {
+      bg.style.opacity = "0.3";
+      bg.style.filter = "saturate(50%)";
+    });
+
+    backgrounds[index].style.opacity = "1";
+    backgrounds[index].style.filter = "saturate(120%)";
   });
 
   option.addEventListener("mouseleave", () => {
-    body.style.background = "#111";
+    backgrounds.forEach(bg => {
+      bg.style.opacity = "0.3";
+      bg.style.filter = "saturate(50%)";
+    });
   });
 
   option.addEventListener("click", () => {
     window.location.href = option.dataset.link;
   });
+
 });
